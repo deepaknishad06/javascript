@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .lightmode {
+        background-color: white;
+        color: black;
+    }
+
+    .darkmode {
+        background-color: black;
+
+        color: white;
+    }
+</style>    
+
+<body class="lightmode">
+    <p>this is light mode</p>
+    <button onclick="mode() ">Enable Dark Mode</button>
+    <script>
+        function mode() {
+            let para = document.getElementsByTagName("p")[0]
+            let btn = document.getElementsByTagName("button")[0]
+            let body = document.body
+
+            if (body.className == "lightmode") {
+                body.classList.add("darkmode")
+                btn.innerHTML = "lightmode"
+                para.innerHTML = "this is darkmode"
+            }
+            else {
+                body.classList.remove("darkmode")
+                btn.innerHTML = "darkmode"
+                para.innerHTML = "this is lightmode"
+            }
+        }
+
+    </script>
+</body>
+
+</html>

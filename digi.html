@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+    }
+</style>
+
+<body>
+    <p id="upd"></p>
+    <script>
+        /*let a = new Date()
+        let b = a.getHours()
+        let c = a.getMinutes()
+        let d = a.getSeconds()
+        console.log(a, b)
+        console.log(b)
+        console.log(c)
+        console.log(d)*/
+        let a = "AM"
+        function update() {
+
+            let date = new Date()
+            let hours = date.getHours()
+            if (hours < 10) {
+                hours = "0" + hours
+            }
+            let minutes = date.getMinutes()
+            let seconds = date.getSeconds()
+            if (hours > 12) {
+                a = "PM"
+            }
+            if (seconds < 10) {
+                seconds = "0" + seconds
+            }
+
+            document.getElementById("upd").innerHTML = hours + ":" + minutes + ":" + seconds + " " + a
+            document.getElementById("upd").style.fontSize = "32px"
+            document.getElementById("upd").style.color = "blue"
+            document.getElementById("upd").style.backgroundColor = "yellow"
+            document.getElementById("upd").style.display = "flex"
+            document.getElementById("upd").style.justifyContent = "center"
+            document.getElementById("upd").style.margin = "20px 40px"
+            document.getElementById("upd").style.padding = "20px"
+        }
+        setInterval(update, 1000)
+
+
+    </script>
+</body>
+
+</html>

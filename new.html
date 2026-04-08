@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .lightmode {
+        background-color: white;
+        color: black;
+    }
+
+    .darkmode {
+        background-color: black;
+
+        color: white;
+    }
+
+    .sec {
+        height: 200px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+    }
+
+    .light {
+
+        background-color: #fff;
+        color: black;
+    }
+
+    .dark {
+        height: 200px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: blueviolet;
+        color: #fff;
+    }
+</style>
+
+<body class="lightmode">
+
+
+    <section class="sec light">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa reprehenderit tempora libero voluptates deleniti
+        eum quaerat consectetur repudiandae aliquam fugiat.
+    </section>
+
+    <p>this is light mode</p>
+    <button onclick="newmode()">lightmode</button>
+    <button onclick="sect()">section</button>
+
+
+    <script>
+
+        function newmode() {
+            let para = document.getElementsByTagName("p")[0]
+            let btn = document.getElementsByTagName("button")[0]
+            let body = document.body
+
+            if (body.className == "lightmode") {
+                body.classList.add("darkmode")
+                btn.innerHTML = "Lightmode"
+                para.innerHTML = "this is darkmode"
+            }
+            else {
+                body.classList.remove("darkmode")
+                btn.innerHTML = "darkMode"
+                para.innerHTML = "this is lightmode"
+            }
+
+
+        }
+
+        function sect() {
+            let body = document.body
+            let section = document.getElementsByClassName("sec")[0]
+
+            if (body.className == "lightmode") {
+                // section.className = "dark"
+                section.classList.add("dark")
+            }
+
+            else {
+                section.classList.remove("dark")
+            }
+        }
+    </script>
+</body>
+
+</html>

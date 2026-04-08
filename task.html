@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    #ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .drop {
+        visibility: visible;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+        justify-content: space-between;
+        position: fixed;
+        left: 85%;
+        top: 20px;
+    }
+
+    .aa {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        background-color: #d3c6c6;
+        justify-content: space-around;
+    }
+
+    .ng {
+        display: none;
+    }
+</style>
+
+<body>
+    <ul id="ul">
+        <li>Home</li>
+        <li> About </li>
+        <li>Contact</li>
+        <li>Services</li>
+        <li> Login</li>
+        <li><button onclick="mode()">Icon</button></li>
+    </ul>
+    <section class="ng">
+        <ul class="aa">
+            <li>ab</li>
+            <li>ab</li>
+            <li>ab</li>
+            <li>ab</li>
+        </ul>
+    </section>
+    <script>
+
+        function mode() {
+            let nav = document.getElementsByClassName("ng")[0]
+
+            if (nav.style.display=="none") {
+                nav.style.display="block"
+                nav.classList.add("drop")
+            }
+            else {
+                nav.classList.remove("drop")
+              nav.style.display="none"
+            }
+        }
+    </script>
+</body>
+
+</html>
