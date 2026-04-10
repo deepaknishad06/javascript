@@ -64,17 +64,22 @@
         </ul>
     </section>
     <script>
+        document.getElementsByTagName("button")[0].style.padding = "4px"
+        document.getElementById("ul").style.display = "flex"
+        document.getElementById("ul").style.alignContent = "center"
+        document.getElementById("ul").style.color = "black"
+        document.getElementById("ul").style.border = "1px solid black"
 
         function mode() {
             let nav = document.getElementsByClassName("ng")[0]
 
-            if (nav.style.display=="none") {
-                nav.style.display="block"
+            if (nav.style.display == "none") {
+                nav.style.display = "block"
                 nav.classList.add("drop")
             }
             else {
                 nav.classList.remove("drop")
-              nav.style.display="none"
+                nav.style.display = "none"
             }
         }
     </script>

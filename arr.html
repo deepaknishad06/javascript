@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <p></p>
+        <p id="p4"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <button id="first" onclick="first()">first button</button>
+
+        <button id="second" onclick="sec()">2nd button</button>
+        <button id="third" onclick="th()">3rd button</button>
+        <button id="fourth" onclick="four()">4th Button</button>
+    </section>
+    <script>
+        let arr = [12, 31, 1, 33, 43, 13]
+        let arr2 = ["abs", "js"]
+        let para = document.getElementsByTagName("p")[0]
+        let para2 = document.getElementById("p2")
+        let para3 = document.getElementById("p3")
+        let para4 = document.getElementById("p4")
+        para.innerHTML = arr
+
+        function first() {
+            para2.innerHTML = arr.sort()
+            para3.innerHTML = "Array Sorted"
+        }
+
+        function sec() {
+            para2.innerHTML = arr.length
+            para3.innerHTML = "lenght of array"
+        }
+        function th() {
+            para2.innerHTML = arr.push("Pushed")
+            para3.innerHTML = "Push Operation"
+            para.innerHTML = arr
+        }
+        function four() {
+            para.innerHTML = arr + "   <--- first array"
+            para4.innerHTML = arr2 + "   <--- second Array"
+            para2.innerHTML = arr.concat(arr2)
+            para3.innerHTML = "concat operation"
+
+
+        }
+
+    </script>
+</body>
+
+</html>
