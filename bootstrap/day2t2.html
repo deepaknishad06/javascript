@@ -47,6 +47,7 @@
         position: absolute;
         flex-direction: column;
         justify-content: space-around;
+        display: none;
     }
 
 
@@ -59,8 +60,11 @@
         gap: 15px;
     }
 
+    #nav {
+        display: none;
+    }
 
-    @media (max-width:768px) {
+    @media (max-width:990px) {
         .col {
             display: none;
         }
@@ -131,14 +135,16 @@
 
             if (nav.style.display == "none") {
                 nav.style.display = "block"
-                nav.classList.add("drop")
+                //nav.classList.add("drop")
             }
             else {
-                nav.classList.remove("drop")
+                //nav.classList.remove("drop")
                 nav.style.display = "none"
             }
         }
+        if (window.innerWidth = "990") {
 
+        }
     </script>
 </body>
 
