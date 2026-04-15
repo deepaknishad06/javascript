@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <input type="password">
+    <input type="password">
+    <button onclick="ab()">Submit</button>
+    <script>
+
+        function ab() {
+            let reg=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+            let name = document.getElementsByTagName("input")[0].value.trim()
+            let pass = document.getElementsByTagName("input")[1].value.trim()
+            let confirmpass = document.getElementsByTagName("input")[2].value.trim()
+
+            if (name == "" || pass == "" || confirmpass == "") {
+                alert("Fill All Form")
+            }
+            else if(!reg.test(pass)){
+                alert("password must have : 8+ characters, 1 uppercase, 1 lowercase, 1 number, 1 special character")
+            }
+            else if (pass.length < 5 || pass.length > 10) {
+                alert("password lenght must be from 5 to 10")
+            }
+            else if (name.length < 2) {
+                alert("name must be more than two letters")
+            }
+            else if (pass != confirmpass) {
+                alert("password and confirm password is not matched")
+            }
+            else {
+                alert("Submitted")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

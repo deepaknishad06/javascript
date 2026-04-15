@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button onclick="c()">Start</button>
+    <h1 id="counter">0</h1>
+
+    <button onclick="reset()">reset</button>
+    <button onclick="st()">Stop</button>
+
+    <script>
+      let counter = 0;
+      let a;
+      function c() {
+        a = setInterval(() => {
+          counter++;
+          document.getElementById("counter").innerText = counter;
+        }, "10");
+      }
+      function reset() {
+        // clearInterval(a)
+        st();
+        counter = 0;
+        document.getElementById("counter").innerText = counter;
+      }
+      function st() {
+        clearInterval(a);
+      }
+    </script>
+  </body>
+</html>

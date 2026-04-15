@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>REGISTRATION FORM</h1>
+    <h3>Name:</h3>
+    <input type="text">
+    <h3>Password</h3>
+    <input type="password">
+    <h3>Confirm Password</h3>
+    <input type="password">
+    <button onclick="fr()">Submit</button>
+
+    <script>
+        function fr() {
+            let reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+            let name = document.getElementsByTagName("input")[0].value.trim()
+            let password = document.getElementsByTagName("input")[1].value.trim()
+            let confirmpass = document.getElementsByTagName("input")[2].value.trim()
+
+            if (name == "" || password == "" || confirmpass == "") {
+                alert("Fill All Form")
+            }
+            else if (name.length <= 2) {
+                alert("name should contain atleast Three Characters")
+            }
+            else if (password != confirmpass) {
+                alert("Password Doesn't Matched")
+            }
+            else if (!reg.test(password)) {
+                alert("Password Must Have : 8+ characters, 1 uppercase, 1 lowercase, 1 number, 1 special character")
+            }
+            else {
+                alert("Form Submitted")
+            }
+        }
+    </script>
+</body>
+
+</html>
