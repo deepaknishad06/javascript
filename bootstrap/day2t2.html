@@ -101,7 +101,7 @@
             <div class="col-1 nn"></div>
             <div class="col-1 nn"></div>
             <div class="col-1 nn"></div>
-            <div class="col menu-icon" id="btn"><i class="fa-solid fa-bars fa-2x"></i></div>
+            <div class="col menu-icon" id="btn" onclick="mode()"><i class="fa-solid fa-bars fa-2x"></i></div>
         </div>
     </section>
     <section>
@@ -126,19 +126,17 @@
         </section>
     </section>
     <script>
-        if (window.innerWidth < 1001) {
-            document.getElementById("btn").addEventListener("click", function e() {
-                document.getElementById("nav").style.display = "block"
-            })
-        }
-        else {
-            document.getElementById("nav").style.display = "none"
-        }
+        function mode() {
+            let nav = document.getElementById("nav")
 
-        if (document.getElementById("nav").style.display === "block") {
-            document.getElementById("btn").addEventListener("click", function e() {
-                document.getElementById("nav").style.display = "none"
-            })
+            if (nav.style.display == "none") {
+                nav.style.display = "block"
+                nav.classList.add("drop")
+            }
+            else {
+                nav.classList.remove("drop")
+                nav.style.display = "none"
+            }
         }
 
     </script>
